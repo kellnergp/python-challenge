@@ -52,3 +52,23 @@ for value in cand_index:
     if vote_counts[value] == winner_count:
         winner = candidates[value]
 
+#generate strings for analysis printout
+line1 = f"Election Results"
+linedash = f"-------------------------"
+linetotal = f"Total Votes: {total_votes}"
+linewinner = f"Winner: {winner}"
+lineresults = []
+
+for value in cand_index:
+    lineresults.append(f"{candidates[value]}: {percentages[value]}% ({vote_counts[value]})")
+
+#print analysis to terminal
+print(line1)
+print(linedash)
+print(linetotal)
+print(linedash)
+for value in cand_index:
+    print(lineresults[value])
+print(linedash)
+print(linewinner)
+print(linedash)
