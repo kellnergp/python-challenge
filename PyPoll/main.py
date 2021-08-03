@@ -4,7 +4,7 @@ import csv
 
 #set paths for input and output files
 in_path = os.path.join("Resources","election_data.csv")
-#out_path = os.path.join("Analysis","Analysis.txt")
+out_path = os.path.join("Analysis","Analysis.txt")
 
 #establish list for appending
 votes = []
@@ -72,3 +72,15 @@ for value in cand_index:
 print(linedash)
 print(linewinner)
 print(linedash)
+
+#write analysis to text file
+with open(out_path, 'w') as out:
+    out.write(line1 + '\n')
+    out.write(linedash + '\n')
+    out.write(linetotal + '\n')
+    out.write(linedash + '\n')
+    for value in cand_index:
+        out.write(lineresults[value] + '\n')
+    out.write(linedash + '\n')
+    out.write(linewinner + '\n')
+    out.write(linedash)
